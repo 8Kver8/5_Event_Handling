@@ -1,0 +1,16 @@
+C:\Users\verki\OneDrive\Рабочий стол\proj\Event_processing\Event_processing\bin\Debug\net8.0-windows\Event_processing.exe
+C:\Users\verki\OneDrive\Рабочий стол\proj\Event_processing\Event_processing\bin\Debug\net8.0-windows\Event_processing.deps.json
+C:\Users\verki\OneDrive\Рабочий стол\proj\Event_processing\Event_processing\bin\Debug\net8.0-windows\Event_processing.runtimeconfig.json
+C:\Users\verki\OneDrive\Рабочий стол\proj\Event_processing\Event_processing\bin\Debug\net8.0-windows\Event_processing.dll
+C:\Users\verki\OneDrive\Рабочий стол\proj\Event_processing\Event_processing\bin\Debug\net8.0-windows\Event_processing.pdb
+C:\Users\verki\OneDrive\Рабочий стол\proj\Event_processing\Event_processing\obj\Debug\net8.0-windows\Event_processing.Form1.resources
+C:\Users\verki\OneDrive\Рабочий стол\proj\Event_processing\Event_processing\obj\Debug\net8.0-windows\Event_processing.csproj.GenerateResource.cache
+C:\Users\verki\OneDrive\Рабочий стол\proj\Event_processing\Event_processing\obj\Debug\net8.0-windows\Event_processing.GeneratedMSBuildEditorConfig.editorconfig
+C:\Users\verki\OneDrive\Рабочий стол\proj\Event_processing\Event_processing\obj\Debug\net8.0-windows\Event_processing.AssemblyInfoInputs.cache
+C:\Users\verki\OneDrive\Рабочий стол\proj\Event_processing\Event_processing\obj\Debug\net8.0-windows\Event_processing.AssemblyInfo.cs
+C:\Users\verki\OneDrive\Рабочий стол\proj\Event_processing\Event_processing\obj\Debug\net8.0-windows\Event_processing.csproj.CoreCompileInputs.cache
+C:\Users\verki\OneDrive\Рабочий стол\proj\Event_processing\Event_processing\obj\Debug\net8.0-windows\Event_processing.dll
+C:\Users\verki\OneDrive\Рабочий стол\proj\Event_processing\Event_processing\obj\Debug\net8.0-windows\refint\Event_processing.dll
+C:\Users\verki\OneDrive\Рабочий стол\proj\Event_processing\Event_processing\obj\Debug\net8.0-windows\Event_processing.pdb
+C:\Users\verki\OneDrive\Рабочий стол\proj\Event_processing\Event_processing\obj\Debug\net8.0-windows\Event_processing.genruntimeconfig.cache
+C:\Users\verki\OneDrive\Рабочий стол\proj\Event_processing\Event_processing\obj\Debug\net8.0-windows\ref\Event_processing.dll
