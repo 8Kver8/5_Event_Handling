@@ -4,10 +4,10 @@ namespace Event_processing
 {
     public partial class Form1 : Form
     {
-        MyRectangle myRect; // создадим поле под наш прямоугольник
         List<BaseObject> objects = new();
         Player player;
         Marker marker;
+        Pickup pickup;
         public Form1()
         {
             InitializeComponent();
@@ -17,6 +17,11 @@ namespace Event_processing
             player.OnOverlap += (p, obj) =>
             {
                 txtLog.Text = $"[{DateTime.Now:HH:mm:ss:ff}] Игрок пересекся с {obj}\n" + txtLog.Text;
+
+                if (obj is Pickup)
+                {
+                    (obj as Pickup).RandomizePosition(pbMain.Width, pbMain.Height);
+                }
             };
 
             // добавил реакцию на пересечение с маркером
@@ -27,11 +32,11 @@ namespace Event_processing
             };
 
             marker = new Marker(pbMain.Width / 2 + 50, pbMain.Height / 2 + 50, 0);
+            pickup = new Pickup(150, 150, 0);
 
             objects.Add(marker);
             objects.Add(player);
-            objects.Add(new MyRectangle(50, 50, 0));
-            objects.Add(new MyRectangle(100, 100, 45));
+            objects.Add(pickup);
         }
 
         private void pbMain_Paint(object sender, PaintEventArgs e)

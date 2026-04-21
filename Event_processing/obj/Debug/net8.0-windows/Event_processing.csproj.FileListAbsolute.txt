@@ -14,3 +14,4 @@ C:\Users\verki\OneDrive\Рабочий стол\proj\Event_processing\Event_proc
 C:\Users\verki\OneDrive\Рабочий стол\proj\Event_processing\Event_processing\obj\Debug\net8.0-windows\Event_processing.pdb
 C:\Users\verki\OneDrive\Рабочий стол\proj\Event_processing\Event_processing\obj\Debug\net8.0-windows\Event_processing.genruntimeconfig.cache
 C:\Users\verki\OneDrive\Рабочий стол\proj\Event_processing\Event_processing\obj\Debug\net8.0-windows\ref\Event_processing.dll
+C:\Users\verki\OneDrive\Рабочий стол\proj\Event_processing\Event_processing\obj\Debug\net8.0-windows\Event_processing.sourcelink.json
