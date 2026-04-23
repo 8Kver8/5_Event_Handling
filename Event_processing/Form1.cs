@@ -8,12 +8,14 @@ namespace Event_processing
         Player player;
         Marker marker;
         Pickup pickup;
+        int score = 0;
+
         public Form1()
         {
             InitializeComponent();
 
             player = new Player(pbMain.Width / 2, pbMain.Height / 2, 0);
-            // добавл€ю реакцию на пересечение
+
             player.OnOverlap += (p, obj) =>
             {
                 txtLog.Text = $"[{DateTime.Now:HH:mm:ss:ff}] »грок пересекс€ с {obj}\n" + txtLog.Text;
@@ -21,10 +23,12 @@ namespace Event_processing
                 if (obj is Pickup)
                 {
                     (obj as Pickup).RandomizePosition(pbMain.Width, pbMain.Height);
+
+                    score++;
+                    labelScore.Text = $"ќчков: {score}";
                 }
             };
 
-            // добавил реакцию на пересечение с маркером
             player.OnMarkerOverlap += (m) =>
             {
                 objects.Remove(m);
@@ -32,11 +36,16 @@ namespace Event_processing
             };
 
             marker = new Marker(pbMain.Width / 2 + 50, pbMain.Height / 2 + 50, 0);
-            pickup = new Pickup(150, 150, 0);
+
+            for (int i = 0; i < 2; i++)
+            {
+                var pickup = new Pickup(0, 0, 0);
+                pickup.RandomizePosition(pbMain.Width, pbMain.Height);
+                objects.Add(pickup);
+            }
 
             objects.Add(marker);
             objects.Add(player);
-            objects.Add(pickup);
         }
 
         private void pbMain_Paint(object sender, PaintEventArgs e)
@@ -46,7 +55,6 @@ namespace Event_processing
 
             updatePlayer();
 
-            // пересчитываем пересечени€
             foreach (var obj in objects.ToList())
             {
                 if (obj != player && player.Overlaps(obj, g))
@@ -56,7 +64,6 @@ namespace Event_processing
                 }
             }
 
-            // рендерим объекты
             foreach (var obj in objects)
             {
                 g.Transform = obj.GetTransform();
@@ -94,14 +101,12 @@ namespace Event_processing
 
         private void pbMain_MouseClick(object sender, MouseEventArgs e)
         {
-            // тут добавил создание маркера по клику если он еще не создан
             if (marker == null)
             {
                 marker = new Marker(0, 0, 0);
-                objects.Add(marker); // и главное не забыть пололжить в objects
+                objects.Add(marker);
             }
 
-            // а это так и остаетс€
             marker.X = e.X;
             marker.Y = e.Y;
         }

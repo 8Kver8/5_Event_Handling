@@ -18,7 +18,6 @@ namespace Event_processing.Objects
         public override GraphicsPath GetGraphicsPath()
         {
             var path = base.GetGraphicsPath();
-            // буду использовать самый маленький круг в центре маркера
             path.AddEllipse(-3, -3, 6, 6);
             return path;
         }

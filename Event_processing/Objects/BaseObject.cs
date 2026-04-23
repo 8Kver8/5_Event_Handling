@@ -27,15 +27,12 @@ namespace Event_processing.Objects
             return matrix;
         }
 
-
         public virtual void Render(Graphics g)
         {
-            // тут пусто
         }
 
         public virtual GraphicsPath GetGraphicsPath()
         {
-            // пока возвращаем пустую форму
             return new GraphicsPath();
         }
 

@@ -32,6 +32,7 @@
             pbMain = new PictureBox();
             timer1 = new System.Windows.Forms.Timer(components);
             txtLog = new RichTextBox();
+            labelScore = new Label();
             ((System.ComponentModel.ISupportInitialize)pbMain).BeginInit();
             SuspendLayout();
             // 
@@ -60,17 +61,29 @@
             txtLog.TabIndex = 1;
             txtLog.Text = "";
             // 
+            // labelScore
+            // 
+            labelScore.AutoSize = true;
+            labelScore.BackColor = SystemColors.ControlLightLight;
+            labelScore.Location = new Point(520, 15);
+            labelScore.Name = "labelScore";
+            labelScore.Size = new Size(67, 20);
+            labelScore.TabIndex = 2;
+            labelScore.Text = "Очков: 0";
+            // 
             // Form1
             // 
             AutoScaleDimensions = new SizeF(8F, 20F);
             AutoScaleMode = AutoScaleMode.Font;
             ClientSize = new Size(916, 484);
+            Controls.Add(labelScore);
             Controls.Add(txtLog);
             Controls.Add(pbMain);
             Name = "Form1";
             Text = "Form1";
             ((System.ComponentModel.ISupportInitialize)pbMain).EndInit();
             ResumeLayout(false);
+            PerformLayout();
         }
 
         #endregion
@@ -78,5 +91,6 @@
         private PictureBox pbMain;
         private System.Windows.Forms.Timer timer1;
         private RichTextBox txtLog;
+        private Label labelScore;
     }
 }
