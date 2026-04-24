@@ -40,7 +40,7 @@
             // 
             pbMain.Location = new Point(12, 12);
             pbMain.Name = "pbMain";
-            pbMain.Size = new Size(585, 460);
+            pbMain.Size = new Size(548, 421);
             pbMain.TabIndex = 0;
             pbMain.TabStop = false;
             pbMain.Paint += pbMain_Paint;
@@ -54,10 +54,10 @@
             // 
             // txtLog
             // 
-            txtLog.Location = new Point(603, 12);
+            txtLog.Location = new Point(566, 12);
             txtLog.Name = "txtLog";
             txtLog.ReadOnly = true;
-            txtLog.Size = new Size(299, 460);
+            txtLog.Size = new Size(277, 421);
             txtLog.TabIndex = 1;
             txtLog.Text = "";
             // 
@@ -65,7 +65,7 @@
             // 
             labelScore.AutoSize = true;
             labelScore.BackColor = SystemColors.ControlLightLight;
-            labelScore.Location = new Point(520, 15);
+            labelScore.Location = new Point(483, 15);
             labelScore.Name = "labelScore";
             labelScore.Size = new Size(67, 20);
             labelScore.TabIndex = 2;
@@ -75,7 +75,7 @@
             // 
             AutoScaleDimensions = new SizeF(8F, 20F);
             AutoScaleMode = AutoScaleMode.Font;
-            ClientSize = new Size(916, 484);
+            ClientSize = new Size(851, 445);
             Controls.Add(labelScore);
             Controls.Add(txtLog);
             Controls.Add(pbMain);

@@ -7,7 +7,6 @@ namespace Event_processing
         List<BaseObject> objects = new();
         Player player;
         Marker marker;
-        Pickup pickup;
         int score = 0;
 
         public Form1()
@@ -20,10 +19,11 @@ namespace Event_processing
             {
                 txtLog.Text = $"[{DateTime.Now:HH:mm:ss:ff}] Игрок пересекся с {obj}\n" + txtLog.Text;
 
-                if (obj is Pickup)
+                if (obj is GreenCircle)
                 {
-                    (obj as Pickup).RandomizePosition(pbMain.Width, pbMain.Height);
-
+                    var grCircle = obj as GreenCircle;
+                    grCircle.RandomizePosition(pbMain.Width, pbMain.Height);
+                    grCircle.Timer = 80;
                     score++;
                     labelScore.Text = $"Очков: {score}";
                 }
@@ -37,11 +37,17 @@ namespace Event_processing
 
             marker = new Marker(pbMain.Width / 2 + 50, pbMain.Height / 2 + 50, 0);
 
-            for (int i = 0; i < 2; i++)
+            for (int i = 0; i < 3; i++)
             {
-                var pickup = new Pickup(0, 0, 0);
-                pickup.RandomizePosition(pbMain.Width, pbMain.Height);
-                objects.Add(pickup);
+                var grCircle = new GreenCircle(0, 0, 0);
+                grCircle.RandomizePosition(pbMain.Width, pbMain.Height);
+
+                grCircle.OnTimeout += (gc) =>
+                {
+                    gc.RandomizePosition(pbMain.Width, pbMain.Height);
+                };
+
+                objects.Add(grCircle);
             }
 
             objects.Add(marker);
@@ -57,6 +63,11 @@ namespace Event_processing
 
             foreach (var obj in objects.ToList())
             {
+                if (obj is GreenCircle gc)
+                {
+                    gc.Update();
+                }
+
                 if (obj != player && player.Overlaps(obj, g))
                 {
                     player.Overlap(obj);
