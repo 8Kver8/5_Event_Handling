@@ -1,4 +1,5 @@
 using Event_processing.Objects;
+using System;
 
 namespace Event_processing
 {
@@ -19,11 +20,11 @@ namespace Event_processing
             {
                 txtLog.Text = $"[{DateTime.Now:HH:mm:ss:ff}] Игрок пересекся с {obj}\n" + txtLog.Text;
 
-                if (obj is GreenCircle)
+                if (obj is GreenCircle gc)
                 {
-                    var grCircle = obj as GreenCircle;
-                    grCircle.RandomizePosition(pbMain.Width, pbMain.Height);
-                    grCircle.Timer = 80;
+                    objects.Remove(gc);
+                    CreateGreenCircle();
+
                     score++;
                     labelScore.Text = $"Очков: {score}";
                 }
@@ -39,19 +40,29 @@ namespace Event_processing
 
             for (int i = 0; i < 3; i++)
             {
-                var grCircle = new GreenCircle(0, 0, 0);
-                grCircle.RandomizePosition(pbMain.Width, pbMain.Height);
-
-                grCircle.OnTimeout += (gc) =>
-                {
-                    gc.RandomizePosition(pbMain.Width, pbMain.Height);
-                };
-
-                objects.Add(grCircle);
+                CreateGreenCircle();
             }
 
             objects.Add(marker);
             objects.Add(player);
+        }
+
+        private void CreateGreenCircle()
+        {
+            var rnd = new Random();
+            var gc = new GreenCircle(
+                rnd.Next(30, pbMain.Width - 30),
+                rnd.Next(30, pbMain.Height - 30),
+                0
+            );
+
+            gc.OnTimeout += (circle) =>
+            {
+                objects.Remove(circle);
+                CreateGreenCircle();
+            };
+
+            objects.Add(gc);
         }
 
         private void pbMain_Paint(object sender, PaintEventArgs e)
@@ -63,10 +74,7 @@ namespace Event_processing
 
             foreach (var obj in objects.ToList())
             {
-                if (obj is GreenCircle gc)
-                {
-                    gc.Update();
-                }
+                obj.Update();
 
                 if (obj != player && player.Overlaps(obj, g))
                 {

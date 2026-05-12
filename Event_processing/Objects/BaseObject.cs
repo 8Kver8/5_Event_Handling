@@ -25,7 +25,7 @@ namespace Event_processing.Objects
 
             return matrix;
         }
-
+ 
         public virtual void Render(Graphics g)
         {
         }
@@ -54,6 +54,10 @@ namespace Event_processing.Objects
             {
                 this.OnOverlap(this, obj);
             }
+        }
+
+        public virtual void Update()
+        {
         }
     }
 }

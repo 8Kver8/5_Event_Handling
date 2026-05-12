@@ -29,9 +29,9 @@ namespace Event_processing.Objects
         {
             base.Overlap(obj);
 
-            if (obj is Marker)
+            if (obj is Marker m)
             {
-                OnMarkerOverlap(obj as Marker);
+                OnMarkerOverlap?.Invoke(m);
             }
         }
     }

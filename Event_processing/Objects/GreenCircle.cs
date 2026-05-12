@@ -31,13 +31,7 @@ namespace Event_processing.Objects
             return path;
         }
 
-        public void RandomizePosition(int maxWidth, int maxHeight)
-        {
-            X = rnd.Next(30, maxWidth - 30);
-            Y = rnd.Next(30, maxHeight - 30);
-        }
-
-        public void Update()
+        public override void Update()
         {
             Timer--;
             if (Timer <= 0)
